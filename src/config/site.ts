@@ -1,28 +1,30 @@
 // Single source of truth for clinic details. Change values here, not in components.
 export const site = {
-  name: 'Freshdent Clinic',
-  shortName: 'Freshdent clinic',
-  tagline: 'Best Dental Clinic in Kohalpur',
-  city: 'Kohalpur',
+  name: 'Family Dental Care Center',
+  shortName: 'Family Dental clinic',
+  tagline: 'Best Dental Clinic in Nepalgunj',
+  city: 'Nepalgunj',
   established: 2018,
-  phones: ['081-5140929', '9848064937'],
+  phones: ['081-532770', '9848064937'],
   whatsapp: '9779848064937', // country code + number, digits only (977 = Nepal)
-  email: 'freshdent.clinic18@gmail.com',
+  email: 'familydentalcarecenter@gmail.com',
   address:
-    'Redcross road, Kohalpur-11, Banke, Province Lumbini, Nepal.',
-  mapLink: 'https://maps.app.goo.gl/tq23umnAZbGxEmWC8',
+    'Nepalgunj-13, Sadar Line, Banke, Province Lumbini, Nepal.',
+  mapLink: 'https://maps.app.goo.gl/DA16xJUpxkeL5VsS9',
   mapEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d564.2192053729198!2d81.68818073786717!3d28.195180071557495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998650041232777%3A0xd17a6ae97dc1ad4e!2sFreshdent%20Clinic!5e1!3m2!1sen!2snp!4v1792393598333!5m2!1sen!2snp',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.5777792378444!2d81.62139474779791!3d28.054690196924458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39986700069159b9%3A0x6d92a9598ffc3c60!2sFamily%20Dental%20Care%20Center!5e1!3m2!1sen!2snp!4v1793895729485!5m2!1sen!2snp',
   hours: [
     { label: 'Dr. Bishwanath Chaudhary', value: '2:00 PM - 6:00 PM' },
     { label: 'Dr. Ramesh Ram Bhandari', value: '10:00 AM - 6:00 PM' },
+    { label: 'Dr. Prathista Bhattrai Baisya', value: '10:00 AM - 6:00 PM' },
+
   ],
   closed: 'Saturday : Closed',
   openDays: 'Sunday – Friday',
   // Add or remove links freely; icons only render for links that are set.
   social: {
-    google: 'https://share.google/sZlqop4IWCOFXrxrM',
-    facebook: 'https://www.facebook.com/p/Freshdent-Clinic-Kohalpur-100065039768016/',
+    google: 'https://share.google/eGM2ho4U7W6uq28yQ',
+    facebook: 'https://www.facebook.com/profile.php?id=61587652840131',
     // To add more later: instagram: 'https://…', youtube: 'https://…'
   } as Partial<Record<'google' | 'facebook' | 'instagram' | 'youtube', string>>,
 }
@@ -53,6 +55,7 @@ export const nav: NavItem[] = [
     children: [
       { label: 'Our Clinic', to: paths.about },
       { label: 'Dr. Bishwanath Chaudhary', to: paths.dentist('bishwanath-chaudhary') },
+      { label: 'Dr. Prathista Bhattrai Baisya', to: paths.dentist('prathista-bhattrai-baisya') },
       { label: 'Dr. Ramesh Ram Bhandari', to: paths.dentist('ramesh-ram-bhandari') },
     ],
   },

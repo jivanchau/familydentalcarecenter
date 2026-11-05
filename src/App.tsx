@@ -1,5 +1,6 @@
-import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider, useParams } from 'react-router-dom'
 import Layout from './components/Layout'
+import { paths } from './config/site'
 import { doctors } from './data/content'
 import { findTreatment } from './lib/api'
 import About from './pages/About'
@@ -13,34 +14,55 @@ import Home from './pages/Home'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 import Treatment from './pages/Treatment'
+import Treatments from './pages/Treatments'
 
-/** Top-level slugs mirror the old site's .php names (minus extension) so redirects stay 1:1. */
-function SlugPage() {
+function TreatmentPage() {
   const { slug = '' } = useParams()
   const treatment = findTreatment(slug)
-  if (treatment) return <Treatment key={slug} treatment={treatment} />
+  return treatment ? <Treatment key={slug} treatment={treatment} /> : <NotFound />
+}
+
+function DentistPage() {
+  const { slug = '' } = useParams()
   const doctor = doctors.find((d) => d.slug === slug)
-  if (doctor) return <Doctor doctor={doctor} />
+  return doctor ? <Doctor key={slug} doctor={doctor} /> : <NotFound />
+}
+
+/** Old top-level URLs (/root-canal, /dr-ramesh-ram-bhandari, …) → their new address. public/_redirects does the same with a 301 in production. */
+function LegacySlug() {
+  const { slug = '' } = useParams()
+  if (findTreatment(slug)) return <Navigate to={paths.treatment(slug)} replace />
+  const doctor = doctors.find((d) => d.slug === slug || `dr-${d.slug}` === slug)
+  if (doctor) return <Navigate to={paths.dentist(doctor.slug)} replace />
   return <NotFound />
 }
+
+const moved = (path: string, to: string) => ({ path, element: <Navigate to={to} replace /> })
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: '/', element: <Home /> },
-      { path: '/about-clinic', element: <About /> },
-      { path: '/gallery', element: <Gallery /> },
-      { path: '/blogs', element: <Blogs /> },
-      { path: '/updates', element: <Blogs /> },
+      { path: paths.home, element: <Home /> },
+      { path: paths.about, element: <About /> },
+      { path: paths.treatments, element: <Treatments /> },
+      { path: '/treatments/:slug', element: <TreatmentPage /> },
+      { path: '/dentists/:slug', element: <DentistPage /> },
+      { path: paths.gallery, element: <Gallery /> },
+      { path: paths.blog, element: <Blogs /> },
       { path: '/blog/:slug', element: <BlogPost /> },
-      { path: '/contact-us', element: <Contact /> },
+      { path: paths.contact, element: <Contact /> },
       { path: '/admin', element: <AdminList /> },
       { path: '/admin/new', element: <AdminEditor /> },
       { path: '/admin/edit/:slug', element: <AdminEditor /> },
-      { path: '/privacy-policy', element: <Legal kind="privacy" /> },
-      { path: '/terms-and-conditions', element: <Legal kind="terms" /> },
-      { path: '/:slug', element: <SlugPage /> },
+      { path: paths.privacy, element: <Legal kind="privacy" /> },
+      { path: paths.terms, element: <Legal kind="terms" /> },
+      moved('/about-clinic', paths.about),
+      moved('/blogs', paths.blog),
+      moved('/updates', paths.blog),
+      moved('/contact-us', paths.contact),
+      moved('/terms-and-conditions', paths.terms),
+      { path: '/:slug', element: <LegacySlug /> },
       { path: '*', element: <NotFound /> },
     ],
   },

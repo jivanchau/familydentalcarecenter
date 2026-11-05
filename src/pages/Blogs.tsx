@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { BlogThumb } from '../components/blog'
 import { Loader, PageBanner, useSeo } from '../components/ui'
-import { site } from '../config/site'
+import { paths, site } from '../config/site'
 import { BLOGS_PER_PAGE, fetchBlogs, formatDate, toExcerpt, type BlogSummary } from '../lib/api'
 
 type State = { status: 'loading' } | { status: 'error'; message: string } | { status: 'ok'; items: BlogSummary[]; total: number }
@@ -52,14 +52,14 @@ export default function Blogs() {
               <div className="grid grid-3">
                 {state.items.map((b) => (
                   <article className="blog-card" key={b.slug}>
-                    <Link to={`/blog/${b.slug}`} className="blog-card__img" tabIndex={-1}>
+                    <Link to={paths.post(b.slug)} className="blog-card__img" tabIndex={-1}>
                       <BlogThumb title={b.title} src={b.thumbnail} />
                     </Link>
                     <div className="blog-card__body">
                       <time dateTime={b.createdAt}><i className="fa-regular fa-calendar" /> {formatDate(b.createdAt)}</time>
-                      <h3><Link to={`/blog/${b.slug}`}>{b.title}</Link></h3>
+                      <h3><Link to={paths.post(b.slug)}>{b.title}</Link></h3>
                       <p>{toExcerpt(b.excerpt)}</p>
-                      <Link to={`/blog/${b.slug}`} className="btn btn-custom">Read More</Link>
+                      <Link to={paths.post(b.slug)} className="btn btn-custom">Read More</Link>
                     </div>
                   </article>
                 ))}

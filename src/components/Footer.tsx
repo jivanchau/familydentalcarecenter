@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <img src="/img/brand/logo-white.png" alt={site.name} width={164} height={90} loading="lazy" />
+          <img src="/img/brand/familydentacarelogo.png" alt={site.name} width={164} height={90} loading="lazy" />
           <p>
             Family and specialist dental care in {site.city} since {site.established}, from children’s check-ups to braces,
             implants and smile makeovers.

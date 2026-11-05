@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { DoctorAvatar } from '../components/sections'
 import { PageBanner, useSeo } from '../components/ui'
-import { site } from '../config/site'
+import { paths, site } from '../config/site'
 import type { Doctor as DoctorT } from '../data/content'
 
 export default function Doctor({ doctor }: { doctor: DoctorT }) {
@@ -23,7 +23,7 @@ export default function Doctor({ doctor }: { doctor: DoctorT }) {
               <p key={p}><i className="fa-solid fa-phone" /> <a href={`tel:${p.replace(/\D/g, '')}`}>{p}</a></p>
             ))}
             <p><i className="fa-solid fa-envelope" /> <a href={`mailto:${site.email}`}>{site.email}</a></p>
-            <Link to="/contact-us" className="btn btn-custom doctor-card__cta">Book Appointment</Link>
+            <Link to={paths.contact} className="btn btn-custom doctor-card__cta">Book Appointment</Link>
           </aside>
 
           <div className="doctor-body">
@@ -95,7 +95,7 @@ export default function Doctor({ doctor }: { doctor: DoctorT }) {
                 <p>Schedule your consultation today. Contact us to book an appointment or visit us at our clinic.</p>
               </div>
               <div className="doctor-cta__actions">
-                <Link to="/contact-us" className="btn btn-light">Book Appointment</Link>
+                <Link to={paths.contact} className="btn btn-light">Book Appointment</Link>
                 <a href={`tel:${site.phones[1].replace(/\D/g, '')}`} className="btn btn-outline-light">
                   <i className="fa-solid fa-phone" /> {site.phones[1]}
                 </a>

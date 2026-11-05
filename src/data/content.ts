@@ -119,8 +119,8 @@ export const doctors: Doctor[] = [
     shortName: 'Dr Bishwanath',
     role: 'Consultant Orthodontist & Dentofacial Orthopedist',
     bio: [
-      'Welcome to the practice of Dr. Bishwanath Chaudhary, where healthy, confident smiles are crafted with scientific precision and compassionate patient care.',
-      'Dr. Bishwanath Chaudhary is a highly qualified and experienced specialist in Orthodontics & Dentofacial Orthopedics, dedicated to improving functional bite health and creating beautiful, life-changing smiles for children, teens, and adults.',
+      'Experience specialized dental care with Dr. Bishwanath Chaudhary, where clinical mastery and genuine compassion come together to transform your smile.',
+      'Bringing extensive expertise in Orthodontics & Dentofacial Orthopedics, Dr. Bishwanath Chaudhary is passionate about restoring proper bite harmony and crafting confident smiles for all ages.',
     ],
     memberships: ['Member, Orthodontic & Dentofacial Orthopedic Association of Nepal (ODOAN)'],
     profile: [
@@ -152,13 +152,24 @@ export const doctors: Doctor[] = [
     },
   },
   {
+    slug: 'prathista-bhattrai-baisya',
+    name: 'Dr. Prathista Bhattrai Baisya',
+    shortName: 'Dr Prathista',
+    role: 'Consultant Dental Surgeon', // TODO: confirm qualification / speciality
+    bio: [
+      // TODO: replace with the doctor's real biography.
+      `Dr. Prathista Bhattrai Baisya is a consultant dental surgeon at ${site.name}, Nepalgunj, committed to gentle, patient-friendly treatment.`,
+    ],
+    memberships: [],
+  },
+  {
     slug: 'ramesh-ram-bhandari',
     name: 'Dr. Ramesh Ram Bhandari',
     shortName: 'Dr Ramesh',
     role: 'Dental Surgeon', // TODO: confirm qualification / speciality
     bio: [
       // TODO: replace with the doctor's real biography.
-      `Dr. Ramesh Ram Bhandari is a dental surgeon at ${site.name}, Kohalpur, committed to gentle, patient-friendly treatment.`,
+      `Dr. Ramesh Ram Bhandari is a dental surgeon at ${site.name}, ${site.city}, committed to gentle, patient-friendly treatment.`,
     ],
     memberships: [],
   },

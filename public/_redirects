@@ -1,2 +1,26 @@
 # Permanent redirects: "/old-path /new-path 301"
 # Add entries here if the clinic had an earlier website, so old Google links keep working.
+
+# Old URLs (site before the /treatments, /dentists, /blog, /contact restructure)
+/about-clinic /about-us 301
+/blogs /blog 301
+/updates /blog 301
+/contact-us /contact 301
+/terms-and-conditions /terms 301
+/dr-bishwanath-chaudhary /dentists/bishwanath-chaudhary 301
+/dr-ramesh-ram-bhandari /dentists/ramesh-ram-bhandari 301
+/braces /treatments/braces 301
+/clear-aligners /treatments/clear-aligners 301
+/crowns-and-bridges /treatments/crowns-and-bridges 301
+/dental-implants /treatments/dental-implants 301
+/dentures /treatments/dentures 301
+/smile-design /treatments/smile-design 301
+/full-mouth-rehabilitation /treatments/full-mouth-rehabilitation 301
+/gum-treatment /treatments/gum-treatment 301
+/kids-dentistry /treatments/kids-dentistry 301
+/oral-surgery /treatments/oral-surgery 301
+/root-canal /treatments/root-canal 301
+/teeth-cleaning /treatments/teeth-cleaning 301
+/teeth-whitening /treatments/teeth-whitening 301
+/fillings /treatments/fillings 301
+/veneers /treatments/veneers 301

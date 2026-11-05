@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { BlogThumb, RichText } from '../components/blog'
 import ShareButtons from '../components/ShareButtons'
 import { Loader, PageBanner, useSeo } from '../components/ui'
-import { site } from '../config/site'
+import { paths, site } from '../config/site'
 import { fetchBlog, formatDate, recentBlogs, toExcerpt, type Blog, type BlogSummary } from '../lib/api'
 import NotFound from './NotFound'
 
@@ -34,7 +34,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <PageBanner title={post?.title ?? 'Blog'} crumbs={[{ label: 'Blogs', to: '/blogs' }]} />
+      <PageBanner title={post?.title ?? 'Blog'} crumbs={[{ label: 'Blogs', to: paths.blog }]} />
       <section className="section">
         <div className="container content-layout">
           {error ? (
@@ -51,7 +51,7 @@ export default function BlogPost() {
                 <RichText text={post.description} />
               </article>
               <ShareButtons title={post.title} />
-              <Link to="/blogs" className="btn btn-custom post-back">
+              <Link to={paths.blog} className="btn btn-custom post-back">
                 <i className="fa-solid fa-arrow-left" /> All articles
               </Link>
             </div>
@@ -63,7 +63,7 @@ export default function BlogPost() {
                 <ul className="recent-posts">
                   {recent.map((r) => (
                     <li key={r.slug}>
-                      <Link to={`/blog/${r.slug}`}>
+                      <Link to={paths.post(r.slug)}>
                         <BlogThumb title={r.title} src={r.thumbnail} small />
                         <span>{r.title}</span>
                       </Link>
@@ -75,7 +75,7 @@ export default function BlogPost() {
             <div className="sidebar-box sidebar-cta">
               <h4>Book a Visit</h4>
               <p>{site.address}</p>
-              <Link className="btn btn-custom" to="/contact-us">Book Appointment</Link>
+              <Link className="btn btn-custom" to={paths.contact}>Book Appointment</Link>
             </div>
           </aside>
         </div>

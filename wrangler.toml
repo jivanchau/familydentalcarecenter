@@ -1,0 +1,24 @@
+# Cloudflare Pages project config
+name = "freshdent-clinic"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-01"
+
+# Create once:  npx wrangler d1 create freshdent-db   (then paste the id below)
+[[d1_databases]]
+binding = "DB"
+database_name = "freshdent-db"
+database_id = "8a774e5e-1c6b-4133-9300-a90ca0fbb1bb"
+
+# Blog thumbnails. Create once:  npx wrangler r2 bucket create freshdent-media
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "freshdent-media"
+
+[vars]
+CONTACT_TO = "freshdent.clinic18@gmail.com"
+# CONTACT_FROM = "Freshdent Website <no-reply@your-domain.com>"
+# Secrets (set in dashboard or with `npx wrangler pages secret put NAME`):
+#   ADMIN_USERNAME, ADMIN_PASSWORD   blog admin login at /admin
+#   SESSION_SECRET                   64+ random characters, e.g. `openssl rand -hex 32`
+#   RESEND_API_KEY, TURNSTILE_SECRET
+# For local dev put the same names in .dev.vars (git-ignored).

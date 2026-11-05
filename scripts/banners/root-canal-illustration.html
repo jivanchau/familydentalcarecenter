@@ -1,0 +1,123 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#0e3468}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <!-- background: same left gradient as slides 1-2, glowing lighter blue behind the tooth -->
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#0e3468"/>
+      <stop offset="0.57" stop-color="#1a56a7"/>
+      <stop offset="1" stop-color="#1d5fb5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1385" cy="560" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8fc3ff" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#4f93e6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1a56a7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- tooth materials -->
+    <linearGradient id="enamel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#d9e2ee"/>
+    </linearGradient>
+    <linearGradient id="dentin" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#ead9b5"/>
+      <stop offset="0.5" stop-color="#f7ecd2"/>
+      <stop offset="1" stop-color="#e3cfa4"/>
+    </linearGradient>
+    <linearGradient id="pulp" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff7a85"/>
+      <stop offset="1" stop-color="#d9364a"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#8d99a8"/>
+      <stop offset="0.45" stop-color="#f4f7fa"/>
+      <stop offset="1" stop-color="#7b8796"/>
+    </linearGradient>
+    <linearGradient id="handle" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#e0a800"/>
+      <stop offset="0.45" stop-color="#ffd84d"/>
+      <stop offset="1" stop-color="#c99200"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="pulpGlow" x="-50%" y="-20%" width="200%" height="140%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#06214a" flood-opacity="0.45"/>
+    </filter>
+
+    <path id="tooth" d="M1150 330 C1140 220 1200 160 1270 175 C1320 185 1340 210 1380 205 C1420 210 1440 185 1490 175
+      C1560 160 1620 220 1610 330 C1605 420 1580 480 1560 540 C1550 620 1545 720 1520 830 C1505 900 1480 960 1455 965
+      C1430 968 1425 920 1425 860 C1425 760 1410 690 1380 690 C1350 690 1335 760 1335 860 C1335 920 1330 968 1305 965
+      C1280 960 1255 900 1240 830 C1215 720 1210 620 1200 540 C1180 480 1155 420 1150 330 Z"/>
+    <clipPath id="toothClip"><use href="#tooth"/></clipPath>
+    <!-- enamel = crown only, hollowed by a scaled-down crown so it reads as a shell -->
+    <mask id="enamelMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+      <linearGradient id="neckFade" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0.44" stop-color="#fff"/><stop offset="0.52" stop-color="#000"/>
+      </linearGradient>
+      <rect x="1100" y="0" width="560" height="1080" fill="url(#neckFade)"/>
+      <use href="#tooth" fill="#000" transform="translate(1380 430) scale(0.83 0.8) translate(-1380 -430)"/>
+    </mask>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <circle cx="1385" cy="560" r="560" fill="url(#glow)"/>
+  <!-- decorative rings + sparkles -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.12">
+    <circle cx="1385" cy="560" r="430" stroke-width="2"/>
+    <circle cx="1385" cy="560" r="500" stroke-width="1.5" stroke-dasharray="4 14"/>
+  </g>
+  <g fill="#ffffff">
+    <path d="M1700 250 l8 -26 l8 26 l26 8 l-26 8 l-8 26 l-8 -26 l-26 -8z" opacity="0.85"/>
+    <path d="M1060 760 l5 -16 l5 16 l16 5 l-16 5 l-5 16 l-5 -16 l-16 -5z" opacity="0.6"/>
+    <path d="M1665 820 l4 -12 l4 12 l12 4 l-12 4 l-4 12 l-4 -12 l-12 -4z" opacity="0.6"/>
+    <circle cx="1120" cy="300" r="5" opacity="0.5"/><circle cx="1745" cy="560" r="4" opacity="0.5"/>
+  </g>
+
+  <!-- whole illustration slightly scaled to sit nicely in frame -->
+  <g transform="translate(1385 590) scale(0.86) translate(-1385 -560)">
+    <!-- tooth body (dentin) -->
+    <g filter="url(#shadow)"><use href="#tooth" fill="url(#dentin)"/></g>
+    <!-- enamel shell on the crown -->
+    <g clip-path="url(#toothClip)">
+      <rect x="1100" y="100" width="560" height="560" fill="url(#enamel)" mask="url(#enamelMask)"/>
+      <!-- thin cementum edge on roots -->
+      <use href="#tooth" fill="none" stroke="#d2bb8c" stroke-width="10"/>
+    </g>
+    <use href="#tooth" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="3"/>
+
+    <!-- access opening + pulp chamber + two canals -->
+    <g filter="url(#pulpGlow)">
+      <path fill="url(#pulp)" d="M1296 214 C1308 205 1340 205 1352 214 L1340 392 L1316 392 Z"/>
+      <path fill="url(#pulp)" d="M1305 430 C1305 390 1340 380 1380 392 C1420 380 1455 390 1455 430
+        C1455 480 1450 530 1447 565 C1455 660 1478 770 1478 905 L1464 905 C1462 775 1440 670 1425 590
+        C1400 612 1360 612 1335 590 C1320 670 1298 775 1296 905 L1282 905 C1282 770 1305 660 1313 565
+        C1310 530 1305 480 1305 430 Z"/>
+    </g>
+    <!-- infection halo at right root tip -->
+    <circle cx="1471" cy="930" r="34" fill="#ff5b6b" opacity="0.35" filter="url(#soft)"/>
+
+    <!-- endodontic file entering the left canal -->
+    <g transform="rotate(2.6 1322 300)">
+      <rect x="1300" y="-6" width="44" height="118" rx="12" fill="url(#handle)"/>
+      <g stroke="#b78400" stroke-opacity="0.6" stroke-width="3">
+        <line x1="1300" y1="20" x2="1344" y2="20"/><line x1="1300" y1="40" x2="1344" y2="40"/>
+        <line x1="1300" y1="60" x2="1344" y2="60"/><line x1="1300" y1="80" x2="1344" y2="80"/>
+      </g>
+      <rect x="1314" y="110" width="16" height="30" rx="3" fill="#c7d0db"/>
+      <path d="M1316 140 L1328 140 L1324 742 L1320 742 Z" fill="url(#steel)"/>
+      <!-- twist flutes -->
+      <g stroke="#6c7888" stroke-width="2" opacity="0.8">
+        <path d="M1316 320 l12 -10 M1316 350 l12 -10 M1317 380 l11 -10 M1317 410 l11 -10 M1317 440 l11 -9 M1318 470 l10 -9
+                 M1318 500 l10 -9 M1318 530 l10 -9 M1319 560 l9 -8 M1319 590 l9 -8 M1319 620 l8 -8 M1320 650 l7 -7 M1320 680 l7 -7 M1320 710 l6 -6"/>
+      </g>
+    </g>
+    <!-- enamel highlight -->
+    <path d="M1185 300 C1190 240 1225 205 1262 200" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>
+</body></html>

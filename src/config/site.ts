@@ -5,8 +5,10 @@ export const site = {
   tagline: 'Best Dental Clinic in Nepalgunj',
   city: 'Nepalgunj',
   established: 2018,
-  phones: ['081-532770', '9848064937'],
-  whatsapp: '9779848064937', // country code + number, digits only (977 = Nepal)
+  phones: ['081-532770', '9868748777'],
+  /** Shown on the "call" buttons next to every Book Appointment button. */
+  bookingPhone: '081-532770',
+  whatsapp: '9779868748777', // country code + number, digits only (977 = Nepal)
   email: 'familydentalcarecenter@gmail.com',
   address:
     'Nepalgunj-13, Sadar Line, Banke, Province Lumbini, Nepal.',
@@ -14,13 +16,13 @@ export const site = {
   mapEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1096.5777792378444!2d81.62139474779791!3d28.054690196924458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39986700069159b9%3A0x6d92a9598ffc3c60!2sFamily%20Dental%20Care%20Center!5e1!3m2!1sen!2snp!4v1793895729485!5m2!1sen!2snp',
   hours: [
-    { label: 'Dr. Bishwanath Chaudhary', value: '2:00 PM - 6:00 PM' },
-    { label: 'Dr. Ramesh Ram Bhandari', value: '10:00 AM - 6:00 PM' },
-    { label: 'Dr. Prathista Bhattrai Baisya', value: '10:00 AM - 6:00 PM' },
+    { label: 'Dr. Bishwanath Chaudhary', value: null },
+    { label: 'Dr. Ramesh Ram Bhandari', value: null },
+    { label: 'Dr. Prathista Bhattrai Baisya', value: null /*'10:00 AM - 6:00 PM' */},
 
   ],
-  closed: 'Saturday : Closed',
-  openDays: 'Sunday – Friday',
+  closed: '',
+  openDays: 'Sunday – Saturday',
   // Add or remove links freely; icons only render for links that are set.
   social: {
     google: 'https://share.google/eGM2ho4U7W6uq28yQ',

@@ -81,8 +81,8 @@ export function BookingBand() {
           <Link to={paths.contact} className="btn btn-light">
             <i className="fa-regular fa-calendar" /> Book Appointment
           </Link>
-          <a href={`tel:${site.phones[1].replace(/\D/g, '')}`} className="btn btn-outline-light">
-            <i className="fa-solid fa-phone" /> {site.phones[1]}
+          <a href={`tel:${site.bookingPhone.replace(/\D/g, '')}`} className="btn btn-outline-light">
+            <i className="fa-solid fa-phone" /> {site.bookingPhone}
           </a>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { nav, paths, site, type NavItem } from '../config/site'
 
 function TopBar() {
-  const call = site.phones[1]
+  const call = site.phones[0]
   return (
     <div className="topbar">
       <div className="container topbar__inner">

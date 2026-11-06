@@ -33,7 +33,7 @@ function Hero() {
             <p>{s.text}</p>
             <div className="showcase__actions">
               <Link to={s.to} className="btn btn-custom btn-lg" tabIndex={n === i ? 0 : -1}>{s.cta}</Link>
-              <a href={`tel:${site.phones[1].replace(/\D/g, '')}`} className="btn btn-outline-light btn-lg" tabIndex={n === i ? 0 : -1}>
+              <a href={`tel:${site.bookingPhone.replace(/\D/g, '')}`} className="btn btn-outline-light btn-lg" tabIndex={n === i ? 0 : -1}>
                 <i className="fa-solid fa-phone" /> Call us
               </a>
             </div>

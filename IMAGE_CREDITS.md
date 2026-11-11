@@ -10,7 +10,7 @@ Each photo below was checked on its Unsplash page as "Free to use under the Unsp
 
 | File | Source |
 |---|---|
-| `public/img/brand/logo-*.png`, `favicon.png`, `apple-touch-icon.png` | Freshdent Clinic logo (supplied by the clinic), processed by `scripts/banners/make_logo.py` |
+| `public/img/brand/logo-*.png`, `favicon.png`, `apple-touch-icon.png` | Family Dental Clinic Center logo (supplied by the clinic), processed by `scripts/banners/make_logo.py` |
 | `public/img/images/hero-smile.jpg` | Photo supplied by the clinic (guardian consent required for the child pictured) |
 | `public/img/images/hero-root-canal.jpg` | Original illustration, `scripts/banners/root-canal-illustration.html` |
 | `public/img/brand/pattern-teeth.svg` | Original pattern |

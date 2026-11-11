@@ -67,7 +67,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionHeading label="Why Freshdent" title="Why patients choose us" center />
+          <SectionHeading label="Why Family Dental Care Center" title="Why patients choose us" center />
           <div className="why-grid">
             {features.map((f) => (
               <div className="why-item" key={f.title}>
@@ -104,7 +104,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <SectionHeading label="About Freshdent" title={`Your neighbourhood dental clinic in ${site.city}`} />
+            <SectionHeading label="About Family Dental Care Center" title={`Your neighbourhood dental clinic in ${site.city}`} />
             <p>
               Since opening in {site.established}, {site.name} has become a trusted name for dental care in {site.city}. You
               will find us on Redcross Road, easy to reach from anywhere in town. Our dentists,{' '}

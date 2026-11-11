@@ -5,7 +5,7 @@
 interface Env {
   DB?: D1Database
   RESEND_API_KEY?: string
-  CONTACT_TO?: string // clinic inbox, e.g. freshdent.clinic18@gmail.com
+  CONTACT_TO?: string // clinic inbox, e.g. familydentalcarecenter@gmail.com
   CONTACT_FROM?: string // verified sender, e.g. "Website <no-reply@yourdomain.com>"
   TURNSTILE_SECRET?: string
 }

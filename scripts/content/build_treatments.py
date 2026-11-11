@@ -9,8 +9,8 @@ import json
 from html import escape
 from pathlib import Path
 
-CLINIC = "Freshdent Clinic"
-CITY = "Kohalpur"
+CLINIC = "Family Dental Care Center"
+CITY = "Nepalgunj"
 QUOTE = (f"Every case is different, so we confirm the cost after an examination at {CLINIC}. "
          "Call or message us and we will be happy to give you an estimate.")
 

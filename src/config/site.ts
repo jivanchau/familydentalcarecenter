@@ -5,7 +5,7 @@ export const site = {
   tagline: 'Best Dental Clinic in Nepalgunj',
   city: 'Nepalgunj',
   established: 2018,
-  phones: ['081-532770', '9868748777'],
+  phones: ['081532770', '9868748777'],
   /** Shown on the "call" buttons next to every Book Appointment button. */
   bookingPhone: '081-532770',
   whatsapp: '9779868748777', // country code + number, digits only (977 = Nepal)

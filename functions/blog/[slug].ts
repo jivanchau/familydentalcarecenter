@@ -31,13 +31,13 @@ export const onRequestGet: PagesFunction<Env, 'slug'> = async ({ request, env, p
 
   const origin = new URL(request.url).origin
   const url = `${origin}/blog/${encodeURIComponent(String(params.slug))}`
-  const title = `${post.title} | Freshdent Clinic`
+  const title = `${post.title} | FamilyDentalCareCenter`
   const description = summary(post.description)
   const image = post.thumbnail ? origin + post.thumbnail : `${origin}/img/images/hero-smile.jpg`
 
   const tags = [
     ['og:type', 'article'],
-    ['og:site_name', 'Freshdent Clinic'],
+    ['og:site_name', 'Family Dental Care Center'],
     ['og:title', post.title],
     ['og:description', description],
     ['og:url', url],

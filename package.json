@@ -1,5 +1,5 @@
 {
-  "name": "freshdent-clinic",
+  "name": "FamilyDentalCareCenter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "cf:dev": "npm run build && wrangler pages dev",
     "cf:deploy": "npm run build && wrangler pages deploy",
-    "db:schema": "wrangler d1 execute freshdent-db --remote --file=db/schema.sql",
-    "db:local": "wrangler d1 execute freshdent-db --local --file=db/schema.sql"
+    "db:schema": "wrangler d1 execute familydental-db --remote --file=db/schema.sql",
+    "db:local": "wrangler d1 execute familydental-db --local --file=db/schema.sql"
   },
   "dependencies": {
     "react": "^19.2.8",

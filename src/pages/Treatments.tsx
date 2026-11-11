@@ -4,7 +4,7 @@ import { PageBanner, SectionHeading, useSeo } from '../components/ui'
 import { paths, site } from '../config/site'
 import { treatmentGroups, treatments } from '../lib/api'
 
-const shortTitle = (title: string) => title.replace(new RegExp(` in (Kohalpur|${site.city})$`, 'i'), '')
+const shortTitle = (title: string) => title.replace(new RegExp(` in (Nepalgunj|${site.city})$`, 'i'), '')
 
 export default function Treatments() {
   useSeo('Treatments', `Dental treatments at ${site.name}, ${site.city}: braces, aligners, implants, root canal, cosmetic and family dentistry.`)

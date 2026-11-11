@@ -7,7 +7,7 @@ export default function Treatment({ treatment }: { treatment: TreatmentT }) {
   useSeo(treatment.title, treatment.description)
   return (
     <>
-      <PageBanner title={treatment.title} crumbs={[{ label: treatment.title.replace(/ in Kohalpur$/i, '') }]} />
+      <PageBanner title={treatment.title} crumbs={[{ label: treatment.title.replace(/ in Nepalgunj$/i, '') }]} />
       <section className="section">
         <div className="container content-layout">
           {/* Trusted, pre-sanitized HTML from src/data/treatments.json */}
@@ -18,7 +18,7 @@ export default function Treatment({ treatment }: { treatment: TreatmentT }) {
               <ul className="sidebar-links">
                 {treatments.map((t) => (
                   <li key={t.slug}>
-                    <NavLink to={paths.treatment(t.slug)}>{t.title.replace(/ in Kohalpur$/i, '')}</NavLink>
+                    <NavLink to={paths.treatment(t.slug)}>{t.title.replace(/ in Nepalgunj$/i, '')}</NavLink>
                   </li>
                 ))}
               </ul>

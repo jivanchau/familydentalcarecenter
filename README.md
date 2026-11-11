@@ -1,4 +1,4 @@
-# Freshdent Clinic, Kohalpur: website
+# Familydentalcarecenter, Nepalgunj: website
 
 Clinic website, hosted on **Cloudflare Pages**. Built with React, with a royal blue theme.
 
@@ -61,8 +61,8 @@ SESSION_SECRET=...   # 64 random hex chars: openssl rand -hex 32
 
 ```bash
 npx wrangler login
-npx wrangler d1 create freshdent-db          # copy the database_id into wrangler.toml
-npx wrangler r2 bucket create freshdent-media # storage for blog thumbnails (binding MEDIA)
+npx wrangler d1 create familydental-db          # copy the database_id into wrangler.toml
+npx wrangler r2 bucket create familydental-media # storage for blog thumbnails (binding MEDIA)
 npm run db:schema                             # create tables in production D1
 npm run cf:deploy                             # first run creates the Pages project
 # admin login (choose a strong password; you will be prompted for each value):
@@ -71,10 +71,10 @@ npx wrangler pages secret put ADMIN_PASSWORD
 npx wrangler pages secret put SESSION_SECRET  # paste the output of: openssl rand -hex 32
 ```
 
-Then in **Cloudflare dashboard → Workers & Pages → freshdent-clinic → Settings**:
+Then in **Cloudflare dashboard → Workers & Pages → family-dental-clinic → Settings**:
 
 1. **Variables & Secrets**:
-   - `RESEND_API_KEY` (secret) and `CONTACT_FROM` (e.g. `Freshdent Website <no-reply@your-domain.com>`). The domain must be verified in Resend.
+   - `RESEND_API_KEY` (secret) and `CONTACT_FROM` (e.g. `Family Dental Care Center Website <no-reply@your-domain.com>`). The domain must be verified in Resend.
    - Optional Turnstile: `TURNSTILE_SECRET` (secret) + build variable `VITE_TURNSTILE_SITE_KEY`.
 2. **Custom domains**: add `your-domain.com` and `www.your-domain.com`.
    The domain's DNS is already on Cloudflare, so this is a one-click switch at go-live.
@@ -97,7 +97,7 @@ auto-filled from the title), an optional **thumbnail** and a **description** (th
   as text — HTML typed into a post can never run on the site, and links only allow http(s), mailto, tel or site paths.
 
 Existing databases created before thumbnails existed need one migration:
-`npx wrangler d1 execute freshdent-db --remote --file=db/migrations/0001_blog_thumbnail.sql`
+`npx wrangler d1 execute familydental-db --remote --file=db/migrations/0001_blog_thumbnail.sql`
 
 Security: the session is an HMAC-signed, HttpOnly, SameSite=Strict cookie valid for 8 hours. Changing
 `SESSION_SECRET` signs everyone out. For extra protection, put `/admin*` and `/api/admin/*` behind
@@ -106,7 +106,7 @@ Security: the session is an HMAC-signed, HttpOnly, SameSite=Strict cookie valid 
 Read contact-form enquiries:
 
 ```bash
-npx wrangler d1 execute freshdent-db --remote --command "SELECT * FROM enquiries ORDER BY id DESC LIMIT 20"
+npx wrangler d1 execute familydental-db --remote --command "SELECT * FROM enquiries ORDER BY id DESC LIMIT 20"
 ```
 
 ## Next phase (suggested)

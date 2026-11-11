@@ -678,7 +678,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 1px 7px; border-radius: 20px; background: var(--soft); color: var(--primary);
 }
 .menu__cta.btn { width: auto; justify-content: center; }
-.menu .menu__cta.btn-light { color: var(--primary); }
+.menu .menu__cta.btn-light { color: #c2410c; } /* orange, passes WCAG AA on white */
 .menu .menu__cta.btn-light:hover { color: var(--white); }
 
 @media (min-width: 992px) {
